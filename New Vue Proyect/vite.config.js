@@ -12,5 +12,13 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  server: {
+    fs: {
+      allow: [
+        // Agrega aquí otros directorios permitidos si es necesario
+        'C:/Users/PC/OneDrive/Escritorio/LSD-VueProyect'
+      ]
+    }
   }
 })

@@ -1,47 +1,49 @@
 <script>
-  import Navbar from './components/Navbar.vue';
-  import Sidebar from './components/Sidebar.vue';
-  import TodoList from './components/TodoList.vue';
-  
-  export default {
-    components: {
-      Navbar,
-      Sidebar,
-      TodoList
-    },
-    data() {
-      return {
-        currentFilter: 'all'
-      };
-    },
-    methods: {
-      filterTasks(filter) {
-        this.currentFilter = filter;
-      }
+import Navbar from './components/Navbar.vue';
+import Sidebar from './components/Sidebar.vue';
+import TodoList from './components/TodoList.vue';
+
+export default {
+  components: {
+    Navbar,
+    Sidebar,
+    TodoList
+  },
+  data() {
+    return {
+      currentFilter: 'all'
+    };
+  },
+  methods: {
+    filterTasks(filter) {
+      this.currentFilter = filter;
     }
-  };
-  </script>
+  }
+};
+</script>
 
 <template>
-    <div id="app">
-      <Navbar />
-      <div class="main">
-        <Sidebar @filter="filterTasks" />
-        <TodoList :filter="currentFilter" />
-      </div>
+  <div id="app">
+    <Navbar />
+    <div class="main">
+      <Sidebar @filter="filterTasks" />
+      <TodoList :filter="currentFilter" />
     </div>
-  </template>
-  
-  <style>
-  #app {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-  .main {
-    display: flex;
-    flex: 1;
-    background-color: white
-  }
-  </style>
-  
+  </div>
+</template>
+
+<style>
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vw;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  background-color: white;
+}
+</style>
