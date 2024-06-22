@@ -51,30 +51,32 @@ export default {
 </script>
 
 <template>
-    <div>
-      <div class="task-input">
-        <input v-model="newTask" @keyup.enter="addTask" placeholder="Agregar una nueva tarea" />
-        <Dropdown required v-model="selectedDepartment" :options="departments" optionLabel="label" placeholder="Seleccionar Departamento" />
-        <button @click="addTask" ><i class="pi pi-check" style="font-size: 1rem"></i></button>
-      </div>
-      <div v-for="task in filteredTasks" :key="task.id">
-        <Task :task="task" @remove="removeTask(task.id)" />
-      </div>
+  <div>
+    <div class="task-input">
+      <input v-model="newTask" @keyup.enter="addTask" placeholder="Agregar una nueva tarea" />
+      <Dropdown required v-model="selectedDepartment" :options="departments" optionLabel="label"
+        placeholder="Seleccionar Departamento" />
+      <button @click="addTask"><i class="pi pi-plus" style="font-size: 1rem"></i></button>
+
     </div>
-  </template>
-  
-  <style scoped>
-  .task-input {
-    display: flex;
-    align-items: center;
-  }
-  .task-input input {
-    flex: 1;
-    margin-right: 10px;
-  }
-  .task-input button {
-    margin-left: 10px;
-  }
-  
-  </style>
-  
+    <div v-for="task in filteredTasks" :key="task.id">
+      <Task :task="task" @remove="removeTask(task.id)" />
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.task-input {
+  display: flex;
+  align-items: center;
+}
+
+.task-input input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.task-input button {
+  margin-left: 10px;
+}
+</style>
