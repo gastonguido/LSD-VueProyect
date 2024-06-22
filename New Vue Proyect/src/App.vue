@@ -38,6 +38,7 @@ export default {
   flex-direction: column;
   height: 100vw;
   width: 100vw;
+  margin: 0 auto;
 }
 
 .main {
